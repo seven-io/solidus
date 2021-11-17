@@ -1,0 +1,22 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  spree:
+    admin:
+      tab:
+        sms77: 'sms77'
+    debug: Debug
+    filter:
+      address: Address Filters
+      include_archived_addresses: Include archived addresses
+    flash: Flash
+    foreign_id: Foreign ID
+    label: Label
+    no_recipients: No recipients found for the given configuration.
+    no_reload: Allow duplicates
+    performance_tracking: Performance Tracking
+    response: Response
+    send: Send
+    sms: SMS
+    text: Text

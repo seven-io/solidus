@@ -1,0 +1,80 @@
+<% admin_breadcrumb(t('spree.sms')) %>
+
+<h1><%= t('spree.sms') %></h1>
+
+<% if @user_message %>
+  <h2><%= t('spree.response') %></h2>
+  <pre><%= @user_message %></pre>
+<% end %>
+
+<%= form_with do |f| %>
+  <div class='row'>
+    <div class='col-12 col-md-6'>
+      <fieldset>
+        <legend><%= t('spree.filter.address') %></legend>
+
+        <div class='form-row justify-content-between'>
+          <%= f.label :filter_include_archived_addresses, t('spree.filter.include_archived_addresses') %>
+          <%= f.check_box :filter_include_archived_addresses %>
+        </div>
+
+        <div class='form-row'>
+          <div class='field'>
+            <%= f.label :filter_address_country, Spree::Country.model_name.human %>
+            <span>
+              <%= f.collection_select :filter_address_country, available_countries(restrict_to_zone: nil), :id, :name, {
+                include_blank: t(:any_country, scope: [:spree, :admin, :prices])
+              }, { class: 'custom-select fullwidth js-country_id' } %>
+            </span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class='form-row justify-content-between'>
+        <%= f.label :debug, t('spree.debug') %>
+        <%= f.check_box :debug %>
+      </div>
+
+      <div class='form-row justify-content-between'>
+        <%= f.label :performance_tracking, t('spree.performance_tracking') %>
+        <%= f.check_box :performance_tracking %>
+      </div>
+
+      <div class='form-row justify-content-between'>
+        <%= f.label :flash, t('spree.flash') %>
+        <%= f.check_box :flash %>
+      </div>
+
+      <div class='form-row justify-content-between'>
+        <%= f.label :no_reload, t('spree.no_reload') %>
+        <%= f.check_box :no_reload %>
+      </div>
+
+      <div class='form-row'>
+        <%= f.label :label, t('spree.label') %>
+        <%= f.text_field :label, class: 'fullwidth', maxlength: 100 %>
+      </div>
+
+      <div class='form-row'>
+        <%= f.label :foreign_id, t('spree.foreign_id') %>
+        <%= f.text_field :foreign_id, class: 'fullwidth', maxlength: 64 %>
+      </div>
+
+      <div class='form-row'>
+        <%= f.label :from, t('spree.from') %>
+        <%= f.text_field :from, class: 'fullwidth', maxlength: 16 %>
+      </div>
+    </div>
+
+    <div class='col-12 col-md-6'>
+      <div class='form-row'>
+        <%= f.label :text, t('spree.text') %>
+        <%= f.text_area :text, class: 'fullwidth required', maxlength: 1520, required: true, rows: 10 %>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-buttons filter-actions actions' data-hook='buttons'>
+    <%= f.submit t('spree.send'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
