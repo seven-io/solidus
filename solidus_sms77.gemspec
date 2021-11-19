@@ -5,16 +5,17 @@ require_relative 'lib/solidus_sms77/version'
 Gem::Specification.new do |spec|
   spec.name = 'solidus_sms77'
   spec.version = SolidusSms77::VERSION
-  spec.authors = ['André Matthies']
-  spec.email = '12965261+matthiez@users.noreply.github.com'
+  spec.authors = ['sms77 e.K.']
+  spec.email = 'a.matthies@sms77.io'
 
   spec.summary = 'Send SMS to your customers via sms77.'
-  spec.homepage = 'https://github.com/solidusio-contrib/solidus_sms77#readme'
+  spec.description = spec.summary
+  spec.homepage = 'https://github.com/sms77io/solidus#readme'
   spec.license = 'BSD-3-Clause'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/solidusio-contrib/solidus_sms77'
-  spec.metadata['changelog_uri'] = 'https://github.com/solidusio-contrib/solidus_sms77/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/sms77io/solidus_'
+  spec.metadata['changelog_uri'] = 'https://github.com/sms77io/solidus/blob/master/CHANGELOG.md'
 
   spec.required_ruby_version = Gem::Requirement.new('~> 2.5')
 
