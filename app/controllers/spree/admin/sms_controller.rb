@@ -23,12 +23,14 @@ module Spree
 
       private
 
-      def build_recipients(as_array = false)
+      def build_recipients(as_array: false)
         to = []
+
+        Rails.logger.debug params.inspect
 
         Spree::UserAddress.all.each { |a|
           next if a.archived && params[:filter_include_archived_addresses] == '0'
-          next if params[:filter_address_country] != '' && params[:filter_address_country] != !a.address.country_id
+          next if params[:filter_address_country] && !params[:filter_address_country].include?(a.address.country_id.to_s)
 
           to.push(a.address.phone)
         }
@@ -46,16 +48,16 @@ module Spree
         if SolidusSms77::Config[:api_key]
           return SolidusSms77::Config[:api_key]
         end
+
         if ENV['SMS77_DUMMY_API_KEY']
           return ENV['SMS77_DUMMY_API_KEY']
         end
-        if ENV['SMS77_API_KEY']
-          ENV['SMS77_API_KEY']
-        end
+
+        ENV['SMS77_API_KEY']
       end
 
       def build_params
-        sms_params = params.to_unsafe_h.slice(
+        params.to_unsafe_h.slice(
           :debug,
           :flash,
           :foreign_id,

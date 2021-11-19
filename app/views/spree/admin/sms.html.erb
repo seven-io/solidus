@@ -2,6 +2,10 @@
 
 <h1><%= t('spree.sms') %></h1>
 
+<% @user_errors.each do |err| %>
+  <pre><%= err %></pre>
+<% end %>
+
 <% if @user_message %>
   <h2><%= t('spree.response') %></h2>
   <pre><%= @user_message %></pre>
@@ -19,14 +23,10 @@
         </div>
 
         <div class='form-row'>
-          <div class='field'>
-            <%= f.label :filter_address_country, Spree::Country.model_name.human %>
-            <span>
-              <%= f.collection_select :filter_address_country, available_countries(restrict_to_zone: nil), :id, :name, {
-                include_blank: t(:any_country, scope: [:spree, :admin, :prices])
-              }, { class: 'custom-select fullwidth js-country_id' } %>
-            </span>
-          </div>
+          <%= f.label :filter_address_country, Spree::Country.model_name.human %>
+          <%= f.collection_select :filter_address_country, available_countries(restrict_to_zone: nil), :id, :name, {
+            include_hidden: false
+          }, { class: 'custom-select fullwidth js-country_id', multiple: true } %>
         </div>
       </fieldset>
 
