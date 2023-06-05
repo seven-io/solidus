@@ -45,15 +45,15 @@ module Spree
       end
 
       def api_key
-        if SolidusSms77::Config[:api_key]
-          return SolidusSms77::Config[:api_key]
+        if SolidusSeven::Config[:api_key]
+          return SolidusSeven::Config[:api_key]
         end
 
-        if ENV['SMS77_DUMMY_API_KEY']
-          return ENV['SMS77_DUMMY_API_KEY']
+        if ENV['SEVEN_DUMMY_API_KEY']
+          return ENV['SEVEN_DUMMY_API_KEY']
         end
 
-        ENV['SMS77_API_KEY']
+        ENV['SEVEN_API_KEY']
       end
 
       def build_params
@@ -71,7 +71,7 @@ module Spree
 
       def send_sms
         if @user_errors.empty?
-          Sms77::Resources::Sms.new(api_key).retrieve(build_params)
+          Seven::Resources::Sms.new(api_key).retrieve(build_params)
         end
       end
     end

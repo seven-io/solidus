@@ -1,12 +1,12 @@
 module Spree
-  class Sms77Configuration < Spree::Preferences::Configuration
+  class SevenConfiguration < Spree::Preferences::Configuration
     preference :api_key, :string
 
     Spree::Backend::Config.configure do |config|
       config.menu_items << config.class::MenuItem.new(
-        [:sms77],
+        [:seven],
         'envelope',
-        url: '/admin/sms77/sms'
+        url: '/admin/seven/sms'
       )
     end
   end

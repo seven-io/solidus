@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-require_relative 'lib/solidus_sms77/version'
+require_relative 'lib/solidus_seven/version'
 
 Gem::Specification.new do |spec|
-  spec.name = 'solidus_sms77'
-  spec.version = SolidusSms77::VERSION
-  spec.authors = ['sms77 e.K.']
-  spec.email = 'a.matthies@sms77.io'
+  spec.name = 'solidus_seven'
+  spec.version = SolidusSeven::VERSION
+  spec.authors = ['seven communications GmbH & Co. KG']
+  spec.email = 'support@seven.io'
 
-  spec.summary = 'Send SMS to your customers via sms77.'
+  spec.summary = 'Send SMS to your customers via seven.'
   spec.description = spec.summary
-  spec.homepage = 'https://github.com/sms77io/solidus#readme'
+  spec.homepage = 'https://github.com/seven-io/solidus#readme'
   spec.license = 'BSD-3-Clause'
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/sms77io/solidus_'
-  spec.metadata['changelog_uri'] = 'https://github.com/sms77io/solidus/blob/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/seven-io/solidus_'
+  spec.metadata['changelog_uri'] = 'https://github.com/seven-io/solidus/blob/master/CHANGELOG.md'
 
   spec.required_ruby_version = Gem::Requirement.new('~> 2.5')
 

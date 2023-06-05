@@ -5,7 +5,7 @@ en:
   spree:
     admin:
       tab:
-        sms77: 'sms77'
+        seven: 'seven'
     debug: Debug
     filter:
       address: Address Filters

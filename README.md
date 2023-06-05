@@ -1,29 +1,26 @@
-![sms77 Logo](https://www.sms77.io/wp-content/uploads/2019/07/sms77-Logo-400x79.png "sms77 Logo")
+![](https://www.seven.io/wp-content/uploads/Logo.svg "seven Logo")
 
 
-[![CircleCI](https://circleci.com/gh/solidusio-contrib/solidus_sms77.svg?style=shield)](https://circleci.com/gh/solidusio-contrib/solidus_sms77)
-[![codecov](https://codecov.io/gh/solidusio-contrib/solidus_sms77/branch/master/graph/badge.svg)](https://codecov.io/gh/solidusio-contrib/solidus_sms77)
-
-<!-- Explain what your extension does. -->
+This extension adds the possibility to send SMS via seven.
 
 ## Installation
 
-Add solidus_sms77 to your Gemfile:
+Add solidus_seven to your Gemfile:
 
 ```ruby
-gem 'solidus_sms77'
+gem 'solidus_seven'
 ```
 
 Bundle your dependencies and run the installation generator:
 
 ```shell
-bin/rails generate solidus_sms77:install
+bin/rails generate solidus_seven:install
 ```
 
 ## Usage
 
 An API key is required for sending.
-It uses either Sms77Configuration[:api_key], ENV['SMS77_DUMMY_API_KEY'] or ENV['SMS77_API_KEY'] in this order depending on which value is set.
+It uses either SevenConfiguration[:api_key], ENV['SEVEN_DUMMY_API_KEY'] or ENV['SEVEN_API_KEY'] in this order depending on which value is set.
 
 ## Development
 
@@ -47,14 +44,14 @@ When testing your application's integration with this extension you may use its 
 Simply add this require statement to your `spec/spec_helper.rb`:
 
 ```ruby
-require 'solidus_sms77/testing_support/factories'
+require 'solidus_seven/testing_support/factories'
 ```
 
 Or, if you are using `FactoryBot.definition_file_paths`, you can load Solidus core
 factories along with this extension's factories using this statement:
 
 ```ruby
-SolidusDevSupport::TestingSupport::Factories.load_for(SolidusSms77::Engine)
+SolidusDevSupport::TestingSupport::Factories.load_for(SolidusSeven::Engine)
 ```
 
 ### Running the sandbox
@@ -87,6 +84,6 @@ git commit -m "Update the changelog"
 
 ##### Support
 
-Need help? Feel free to [contact us](https://www.sms77.io/en/company/contact/).
+Need help? Feel free to [contact us](https://www.seven.io/en/company/contact/).
 
 [![MIT](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)

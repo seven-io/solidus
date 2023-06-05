@@ -1,27 +1,27 @@
 # frozen_string_literal: true
 
-module SolidusSms77
+module SolidusSeven
   module Generators
     class InstallGenerator < Rails::Generators::Base
       class_option :auto_run_migrations, type: :boolean, default: false
       source_root File.expand_path('templates', __dir__)
 
       def copy_initializer
-        template 'initializer.rb', 'config/initializers/solidus_sms77.rb'
+        template 'initializer.rb', 'config/initializers/solidus_seven.rb'
       end
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/solidus_sms77\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/solidus_sms77\n"
+        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/solidus_seven\n"
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/solidus_seven\n"
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/solidus_sms77\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
-        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/solidus_sms77\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
+        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/solidus_seven\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
+        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/solidus_seven\n", before: %r{\*/}, verbose: true # rubocop:disable Layout/LineLength
       end
 
       def add_migrations
-        run 'bin/rails railties:install:migrations FROM=solidus_sms77'
+        run 'bin/rails railties:install:migrations FROM=solidus_seven'
       end
 
       def run_migrations
