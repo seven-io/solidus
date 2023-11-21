@@ -6,7 +6,6 @@ en:
     admin:
       tab:
         seven: 'seven'
-    debug: Debug
     filter:
       address: Address Filters
       include_archived_addresses: Include archived addresses

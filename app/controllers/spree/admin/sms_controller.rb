@@ -58,7 +58,6 @@ module Spree
 
       def build_params
         params.to_unsafe_h.slice(
-          :debug,
           :flash,
           :foreign_id,
           :from,
