@@ -15,6 +15,9 @@ Bundle your dependencies and run the installation generator:
 ```shell
 bin/rails generate solidus_seven:install
 ```
+## Functionalities
+### Bulk SMS
+Send SMS to all your customers at once. You can filter by country, to target only customers from a specific country.
 
 ## Usage
 
